@@ -60,3 +60,13 @@ To ensure data persistence across container restarts, mount a volume when runnin
 docker run --name mysql-company -v /path/to/local/directory:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=yourpassword -e MYSQL_DATABASE=company -d -p 3306:3306 mysql:latest
 Replace /path/to/local/directory with the path to a directory on your host machine.
 ```
+
+# Issue I've encounter and fix
+
+```bash
+ERROR 1366 (HY000) at line 12: Incorrect integer value: 'Consulting' for column 'department' at row 41
+```
+
+# fix
+
+I locate the entry for user Murphy in data source, change the 'department' value from 'Consulting' to the correct integer ID (7 for Consulting), and then re-import the database with the corrected data.
