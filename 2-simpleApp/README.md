@@ -1,9 +1,10 @@
 Setup Instructions
 
-1. Create a Dockerfile
-   Create a Dockerfile in the root of your project directory with the following content for the Python application:
+# Create a Dockerfile
 
-Dockerfile
+Create a Dockerfile in the root of your project directory with the following content for the Python application:
+
+# Dockerfile
 
 ```dockerfile
 # Use an official Python runtime as the base image
@@ -34,11 +35,13 @@ docker run -e MY_ENV_VAR="Docker User" simpleapp
 You should see the message: Hello, Docker User!
 ```
 
-3. Set Up a Docker Registry
-   Create a repository on Docker Hub named simpleapp. Ensure you're logged into Docker Hub and have permissions to push images.
+# Set Up a Docker Registry
 
-4. Automate with GitHub Actions
-   Create a .github/workflows directory in your project and add a docker.yml file with the following content:
+Create a repository on Docker Hub named simpleapp. Ensure you're logged into Docker Hub and have permissions to push images.
+
+# Automate with GitHub Actions
+
+Create a .github/workflows directory in your project and add a docker.yml file with the following content:
 
 # yaml
 
@@ -71,9 +74,15 @@ steps: - uses: actions/checkout@v2
 
 Replace your-docker-username with your actual Docker Hub username.
 
-5. Configure GitHub Secrets
+# Configure GitHub Secrets
    In your GitHub repository settings, add two new secrets:
 
 DOCKER_USERNAME - your Docker Hub username.
 DOCKER_PASSWORD - your Docker Hub password or access token.
+```
+
+# Link to Docker Hub
+
+```link
+https://hub.docker.com/r/mirunaf/test/tags
 ```
